@@ -1,0 +1,11 @@
+name: Request More Information
+description: Post a comment to request more information when someone labeled an issue with "needs info".
+
+inputs:
+  GITHUB_TOKEN:
+    description: GITHUB_TOKEN
+    required: true
+
+runs:
+  using: node12
+  main: request.js
