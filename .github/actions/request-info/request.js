@@ -42,7 +42,11 @@ const req = request(
     {
         method: "POST",
         href: `https://api.github.com/repos/${repo}/issues/${issueId}/comments`,
-        headers: { Authorization: `token ${token}` },
+        headers: {
+            Accept: "application/vnd.github+json, application/json",
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json",
+        },
     },
     res => {
         console.log("Result:  %d %s", res.statusCode, res.statusMessage)
