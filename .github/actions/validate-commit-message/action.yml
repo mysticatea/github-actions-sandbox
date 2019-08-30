@@ -1,0 +1,9 @@
+name: Validate PR Subject
+description: |
+  Validate the subject of a pull request.
+  If the PR has a commit, it validates the commit message of the commit.
+  Otherwise, it validates PR title.
+
+runs:
+  using: node12
+  main: validate.js
