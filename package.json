@@ -1,0 +1,28 @@
+{
+  "name": "github-actions-sandbox",
+  "version": "0.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@mysticatea/eslint-plugin": "^11.0.0",
+    "eslint": "^6.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysticatea/github-actions-sandbox.git"
+  },
+  "keywords": [],
+  "author": "Toru Nagashima <public@mysticatea.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mysticatea/github-actions-sandbox/issues"
+  },
+  "homepage": "https://github.com/mysticatea/github-actions-sandbox#readme"
+}

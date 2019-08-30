@@ -1,0 +1,4 @@
+root: true
+extends:
+  - plugin:@mysticatea/es2019
+  - plugin:@mysticatea/+node
