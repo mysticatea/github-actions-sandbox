@@ -1,4 +1,11 @@
 root: true
 extends:
   - plugin:@mysticatea/es2019
-  - plugin:@mysticatea/+node
+
+overrides:
+  - files: .github/**/*
+    extends:
+      - plugin:@mysticatea/+node
+    rules:
+      no-console: "off"
+      no-process-env: "off"

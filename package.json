@@ -9,6 +9,7 @@
   "dependencies": {},
   "devDependencies": {
     "@mysticatea/eslint-plugin": "^11.0.0",
+    "@types/node": "^12.7.3",
     "eslint": "^6.2.2"
   },
   "scripts": {
