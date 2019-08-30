@@ -1,0 +1,14 @@
+name: PR Subject
+on: [issues]
+
+jobs:
+  request-info:
+    name: Request Info
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Request Info
+        uses: ./.github/actions/request-info
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
