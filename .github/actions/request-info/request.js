@@ -7,13 +7,6 @@ const { request } = require("https")
 // Constants
 const TargetLabel = "needs info"
 
-// Dump triggers.
-console.log("Event:   %s", process.env.GITHUB_EVENT_NAME)
-console.log("Action:  %s", process.env.GITHUB_ACTION)
-if (process.env.GITHUB_ACTION !== "labeled") {
-    return
-}
-
 // Load event data.
 const token = process.env.INPUT_GITHUB_TOKEN
 if (!token) {
@@ -25,6 +18,11 @@ const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH))
 if (!event.issue || !event.label) {
     console.log("Unknown Event Payload:", JSON.stringify(event, null, 4))
     process.exitCode = 1
+    return
+}
+console.log("Event:   %s", process.env.GITHUB_EVENT_NAME)
+console.log("Action:  %s", event.action)
+if (event.action !== "labeled") {
     return
 }
 const repo = process.env.GITHUB_REPOSITORY
