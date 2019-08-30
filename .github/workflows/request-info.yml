@@ -1,4 +1,4 @@
-name: PR Subject
+name: Request Info
 on: [issues]
 
 jobs:
