@@ -13,3 +13,4 @@ jobs:
 
 # 問題:
 # - pull_request.synchronize 以外のアクションで呼ばれない。
+# - re-run すると pull_request イベントじゃない。

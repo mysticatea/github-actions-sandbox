@@ -25,16 +25,21 @@ const SuffixPattern = new RegExp(
     "gu",
 )
 
+// Dump triggers.
+console.log("Event:   %s", process.env.GITHUB_EVENT_NAME)
+console.log("Action:  %s", process.env.GITHUB_ACTION)
+
 // Load event data.
 const event = JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH))
-const {
-    action,
-    pull_request: { commits, head, title },
-} = event
+if (!event.pull_request) {
+    console.log("Unknown Event Payload:", JSON.stringify(event, null, 4))
+    process.exitCode = 1
+    return
+}
+const { commits, head, title } = event.pull_request
 const subject = commits === 1 ? getCommitSubject(head.sha) : title
 const targetName = commits === 1 ? "the commit message" : "the PR title"
 
-console.log("Action:  %s", action)
 console.log("Subject: %j (%s)", subject, targetName)
 console.log()
 
