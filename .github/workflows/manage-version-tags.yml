@@ -1,0 +1,16 @@
+name: Manage Version Tags
+on:
+  push:
+    tags: v*
+
+jobs:
+  follow:
+    name: Follow major/minor version tags.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Tag
+        uses: mysticatea-actions/manage-version-tags@v0.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
