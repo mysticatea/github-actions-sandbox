@@ -11,7 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Push
-        uses: mysticatea-actions/gh-pages@v0.0.0-alpha.1
+        uses: mysticatea-actions/gh-pages@v0.0.0-alpha.2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           sourceDir: docs
