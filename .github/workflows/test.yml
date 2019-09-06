@@ -8,5 +8,10 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
-      - name: Show version
-        uses: mysticatea-actions/template@v0
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Push
+        uses: mysticatea-actions/gh-pages@v0.0.0-alpha.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sourceDir: docs
