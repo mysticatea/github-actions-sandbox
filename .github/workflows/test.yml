@@ -1,0 +1,12 @@
+name: Test
+on:
+  push:
+    branches: [test]
+
+jobs:
+  Test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show version
+        uses: mysticatea-actions/template@v0
